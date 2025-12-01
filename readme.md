@@ -42,6 +42,7 @@ If needed, you can also use relative positions (which lends itself to complex tr
 
 ```tsx
 import { type TrackMap } from '@ethic/railway';
+import '@ethic/railway/dist/index.css';
 
 function createDefaultTracks(): TrackMap {
 	return new Map([
@@ -115,6 +116,7 @@ Railway provides `useRailwayTracks` which allows you to describe the possible vi
 
 ```tsx
 import { DOWN, RIGHT, useRailwayTracks } from '@ethic/railway';
+import '@ethic/railway/dist/index.css';
 
 const createRoutes = () =>
 	new Map([
@@ -182,7 +184,8 @@ For condensed views (like user journeys within a onboarding or payment form), Ra
 > This is not ideal for any views where a user might need to branch off into different directions at a given point. If you must, you can use `useRailwayTracks()` at a given point to map out states outside of the base TrackMap - but the DX won't be kind.
 
 ```tsx
-import { Railway, useLinearTrack, type StepDefinition } from '@ethic/railway';
+import Railway, { useLinearTrack, type StepDefinition } from '@ethic/railway';
+import '@ethic/railway/dist/index.css';
 
 function MyStepFlow() {
 	const showSecondStep = false;

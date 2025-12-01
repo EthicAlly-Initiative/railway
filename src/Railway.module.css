@@ -8,6 +8,7 @@
 :root {
 	--railway-track-pos-x: 0;
 	--railway-track-pos-y: 0;
+	--railway-animation-factor: 1;
 }
 
 .track {
@@ -15,8 +16,10 @@
 	width: 100%;
 	height: 100%;
 	overflow: auto;
-	transition: transform 0.6s cubic-bezier(0.28, 1.13, 0.64, 1),
-		visibility 0.7s, opacity 1.1s;
+	transition: transform calc(var(--railway-animation-factor) * 0.6s)
+			cubic-bezier(0.28, 1.13, 0.64, 1),
+		visibility calc(var(--railway-animation-factor) * 0.7s),
+		opacity calc(var(--railway-animation-factor) * 1.1s);
 	opacity: 0;
 	visibility: hidden;
 }
